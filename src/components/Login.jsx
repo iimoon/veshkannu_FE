@@ -45,7 +45,8 @@ const Login = () => {
         .post("http://localhost:3008/api/login", inputs)
         .then((res) => {
           if (res.status === 200) {
-            localStorage.setItem("userId", res.data.userId);
+            console.log(res.data)
+            localStorage.setItem("token", res.data.token);
             toast.success("Login successful!, Redirecting...", { autoClose: 3000 });
             setTimeout(() => navigate("/userview"), 3000);
           }

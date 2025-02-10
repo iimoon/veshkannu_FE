@@ -14,6 +14,7 @@ const UserNavbar = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
+    console.log(token)
     if (!token) {
       navigate('/'); // Redirect to login if no token
     } else {
@@ -40,7 +41,7 @@ const UserNavbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/userlogin'); // Redirect to login after logout
+    navigate('/'); // Redirect to login after logout
   };
 
   const toggleDrawer = (open) => () => {
